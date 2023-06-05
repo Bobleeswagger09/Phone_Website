@@ -23,11 +23,14 @@
     border: 0;
     text-decoration: none;
     list-style: none;
-    box-sizing: border-box;    
+    box-sizing: border-box;   
+    transition: all .2s linear;
+ 
 }
 
 html{
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body{
@@ -127,6 +130,7 @@ nav{
     left: 0;
     z-index: 2;
     background: var(--color-primary);
+    
 }
 
 .window-scroll{
@@ -168,6 +172,13 @@ nav button{
     font-size: 1.7rem;
 }
 
+
+#menu-btn {
+    font-size: 2.5rem;
+    color: var(--color-light);
+    cursor: pointer;
+    display: none;
+}
 
 /******************* Header Section  **********************/
 header{
@@ -561,7 +572,15 @@ footer ul li a:hover{
         position: relative;
         /* width: 100vw; */
     }
+    
+    #menu-btn {
+        display: initial;
+    }
+   
+    #menu-btn.fa-times {
+        transform: rotate(180deg);
 
+    }
     .nav__logo{
         margin-left: 2rem;
         position: relative;
@@ -579,6 +598,12 @@ footer ul li a:hover{
         gap: 0;
         z-index: 3;
         display: none;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+
+    }
+
+    .nav__items.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
 
     .nav__items li{
@@ -617,16 +642,15 @@ footer ul li a:hover{
         margin-right: 1.4rem;
         background: transparent;
         color: var(--color-white);
-        cursor: pointer;
+        cursor: pointer;    
     }
 
-    /* nav button#menu-btn{
+
+    
+
+    /* nav button#close-btn{
         display: none;
     } */
-
-    nav button#close-btn{
-        display: none;
-    }
 
     nav button i{
         font-size: 2.4rem;
@@ -837,7 +861,6 @@ footer ul li a:hover{
         border-top: 1px solid var(--color-light);
 
     }
-
 
 }
 
