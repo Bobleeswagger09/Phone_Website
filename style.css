@@ -174,10 +174,11 @@ nav button{
 
 
 #menu-btn {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     color: var(--color-light);
     cursor: pointer;
     display: none;
+
 }
 
 /******************* Header Section  **********************/
